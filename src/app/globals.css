@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .font-orbitron {
+    font-family: var(--font-orbitron), sans-serif;
+  }
+}
+
+/* Design limpo e natural */
+@layer components {
+  .store-card {
+    @apply bg-gray-900 border border-gray-700 rounded-lg transition-colors;
+  }
+
+  .store-card:hover {
+    @apply border-gray-600;
+  }
+
+  .store-button {
+    @apply bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+  }
+
+  .store-input {
+    @apply bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-gray-600 focus:outline-none;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-black text-white overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  /* Bloquear seleção de imagens */
+  img {
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-select: none;
+  }
+
+  /* Watermark invisível */
+  body::before {
+    content: "STARLING_RPG_2024_©_PROPRIEDADE_INTELECTUAL";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    pointer-events: none;
+    opacity: 0.001;
+    font-size: 1px;
+    color: transparent;
+    background: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  * {
+    @apply border-white/10;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-starling-600 hover:bg-starling-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-6 rounded-lg border border-gray-700 hover:border-gray-600 transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6;
+  }
+  
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Efeitos sutis e modernos */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent;
+  }
+
+  .accent-gradient {
+    @apply bg-gradient-to-r from-starling-500 to-red-500;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-starling-400 to-starling-600 bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-starling {
+    @apply bg-gradient-to-r from-starling-600 to-starling-800;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out forwards;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Animações sutis e profissionais */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.3);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scrollbar moderna */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(220, 38, 38, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 38, 38, 0.7);
+}
