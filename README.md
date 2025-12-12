@@ -87,9 +87,3 @@ npm run lint
 - Dashboard pessoal
 - Estatísticas do jogador
 - Histórico de atividades
-
-## 📞 Contato
-
-- **Discord**: [Link do Discord]
-- **Instagram**: [@starlingrpg]
-- **Website**: [starling-rpg.com]
